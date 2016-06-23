@@ -77,7 +77,7 @@
 </key>
 <comment>discos duros para mv</comment>
 </table>
-<table x="728" y="204" name="mvHdd">
+<table x="728" y="204" name="mvMaqVirt">
 <row name="id" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
