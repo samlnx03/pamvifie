@@ -1,8 +1,8 @@
 #!/bin/bash
 NAME=$1
 if [ -z "$NAME" ]; then
-	echo "-1 no se paso argumento 1 nombre"
-	exit
+        echo "-1 no se paso argumento 1 nombre"
+        exit
 fi
 
 exec 2>/dev/null
@@ -14,5 +14,6 @@ exec 2>/dev/null
 #sperez@fiesrv:~/pamvifie$ sudo lvremove -f fie_vg/borrame1
 #  Logical volume "borrame1" successfully removed
 
-S="sudo lvcreate -L $SIZE -n $NAME fie_vg"
+S=$(lvremove -f fie_vg/$NAME)
 echo "$S"
+
