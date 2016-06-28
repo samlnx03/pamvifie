@@ -8,3 +8,7 @@ y se entra con el index.html
 
 luego se carga el xml para editar la base de datos
 y de ahi se puede generar en .sql para mysql
+
+
+Estos archivos van en el servidor de virtualizacion
+
