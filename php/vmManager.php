@@ -1,5 +1,6 @@
 <?php
-require("../secret.php");
+require("/home/sperez/pamvifie/secret.php");
+// define IP & PORT
 class VMmanager  {
 	protected static $instance;
 	var $address=IP;
