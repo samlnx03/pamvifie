@@ -65,18 +65,17 @@ class VMmanager  {
 	function write($m){
 		if(substr($m,-1)!="\n") $m=$m."\n";
 		socket_write($this->socket, $m, strlen($m));
+		$this->log($m);
 	}
 	function read($nbytes){return socket_read($this->socket, $nbytes);}
 
-	function is_running($gpo, $num){
-		$this->write("is_running $gpo $num");
-		return $this->read(2);
-	}
-	function boot($gpo, $num){
-		$this->write("boot $gpo $num");
-	}
-	function kill($gpo, $num){
-		$this->write("kill $gpo $num");
+	function log($m){
+		$IP=$_SERVER['REMOTE_ADDR'];
+		$now=new DateTime("NOW"); $dt=$now->format("Ymd_His");
+		// poner los logs en la bdd posteriormente
+		$LOGFILE=fopen("/home/sperez/pamvifie/log/pamvifie.log","a");
+		fwrite($LOGFILE, $dt." ".$IP." ".$m."\n");
+		fclose($LOGFILE);
 	}
 }
 
