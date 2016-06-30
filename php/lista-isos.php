@@ -14,6 +14,7 @@ Formato de info: listaIsos+
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
 $vmm->write("cmd:listaIsos");
 $l=$vmm->read(1024);
 $li=explode("\n",$l);

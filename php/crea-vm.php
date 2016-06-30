@@ -7,6 +7,7 @@ crea-vm.php
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
         // valores de prueba
         $mem="mem"; $memSize="1G"; 
         $name="name"; $nameval="prueba";

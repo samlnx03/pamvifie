@@ -7,6 +7,7 @@ vm-changeCD.php	envia señal a proceso de mv
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
         // valores de prueba
         $name="name"; 
 	$nameval="prueba";	// ESTE VALOR SE DEBE DE OBTENER DE CONSULTA A LA TABLA

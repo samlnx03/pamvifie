@@ -9,6 +9,7 @@ no incluye los servidores virsh ni maquinas especiales
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
 $vmm->write("cmd:vmsRunning");
 $l=$vmm->read(1024);
 $li=explode("\n",$l);

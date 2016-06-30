@@ -16,6 +16,7 @@ Regresa: info del volumen logico o "-1 poblema" si hay algun problema
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
 $vmm->write("cmd:crearHdd+name:borrame+size:1G");
 $l=$vmm->read(1024);
 echo $l;

@@ -7,6 +7,7 @@ remove-vm.php
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
         // valores de prueba
         $nameval="prueba";
 $vmm->write("cmd:removeVM+name:$nameval");

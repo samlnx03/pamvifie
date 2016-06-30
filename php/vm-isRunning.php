@@ -7,6 +7,7 @@ vm-isRunning.php	saber si una vm esta corriendo
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
         // valores de prueba
         $name="name"; $nameval="prueba";
 

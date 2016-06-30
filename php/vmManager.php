@@ -70,7 +70,10 @@ class VMmanager  {
 	function read($nbytes){return socket_read($this->socket, $nbytes);}
 
 	function log($m){
-		$IP=$_SERVER['REMOTE_ADDR'];
+		if(isset($_SERVER['REMOTE_ADDR']))
+			$IP=$_SERVER['REMOTE_ADDR'];
+		else 
+			$IP="UnKnow IP";
 		$now=new DateTime("NOW"); $dt=$now->format("Ymd_His");
 		// poner los logs en la bdd posteriormente
 		$LOGFILE=fopen("/home/sperez/pamvifie/log/pamvifie.log","a");

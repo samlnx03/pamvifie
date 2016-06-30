@@ -9,6 +9,7 @@ da oportunidad de actualizar la tabla respectiva en la base de datos
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
 $vmm->write("cmd:listaVMs");
 $l=$vmm->read(1024);
 $li=explode("\n",$l);

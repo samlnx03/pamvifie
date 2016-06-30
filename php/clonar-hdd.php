@@ -16,6 +16,7 @@ Regresa: info del volumen logico y pid del dd o "-1 poblema" si hay algun proble
 require_once "vmManager.php";
 
 $vmm=VMmanager::getInstance();
+require("checa_socket_ok.php");
 $vmm->write("cmd:clonarHdd+name:borrame+new:borrame1");
 $l=$vmm->read(1024);
 echo $l;
