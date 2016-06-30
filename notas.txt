@@ -1,2 +1,1 @@
-Estos archivos van en el servidor de virtualizacion
-
+Estos archivos van en el servidor de bases de datos y servidor de web
