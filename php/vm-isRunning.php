@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 vm-isRunning.php	saber si una vm esta corriendo
@@ -22,3 +23,4 @@ echo "</body></html>\n";
 */
 ?>
 
+</body></html>

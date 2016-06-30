@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 vm-changeCD.php	envia señal a proceso de mv
@@ -25,3 +26,4 @@ echo "</body></html>\n";
 */
 ?>
 
+</body></html>

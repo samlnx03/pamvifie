@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 lista-vms.php
@@ -33,3 +34,4 @@ echo "</body></html>\n";
 */
 ?>
 
+</body></html>

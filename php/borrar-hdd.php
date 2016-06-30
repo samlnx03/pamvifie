@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 borrar-hdd.php
@@ -27,3 +28,4 @@ echo "</body></html>\n";
 */
 ?>
 
+</body></html>

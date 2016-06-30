@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 remove-vm.php
@@ -21,3 +22,4 @@ echo "</body></html>\n";
 */
 ?>
 
+</body></html>

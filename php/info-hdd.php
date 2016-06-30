@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 info-hdd.php
@@ -28,3 +29,4 @@ echo "</body></html>\n";
 */
 ?>
 
+</body></html>

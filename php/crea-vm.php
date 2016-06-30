@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 crea-vm.php
@@ -41,3 +42,4 @@ echo "</body></html>\n";
 */
 ?>
 
+</body></html>

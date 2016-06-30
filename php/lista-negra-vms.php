@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 lista-negra-vms.php
@@ -27,3 +28,4 @@ echo "</body></html>\n";
 */
 ?>
 
+</body></html>

@@ -1,3 +1,4 @@
+<html><body><?php require('menu.php');?>
 <?php
 /* 
 vm-start.php	boot a una vm
@@ -29,3 +30,4 @@ echo "</body></html>\n";
 
 ?>
 
+</body></html>
