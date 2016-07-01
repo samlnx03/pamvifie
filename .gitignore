@@ -1,3 +1,4 @@
 # archivo a ignorar por git (archivo .gitignore)
 log/
+php/stopserver.php
 
