@@ -2,6 +2,7 @@
 <br>
 <a href=lista-isos.php>lista-isos.php</a><br>
 <br>
+<a href=lista-hdds.php>lista-hdds.php</a><br>
 <a href=info-hdd.php>info-hdd.php</a><br>
 <a href=borrar-hdd.php>borrar-hdd.php</a><br>
 <a href=clonar-hdd.php>clonar-hdd.php</a><br>
