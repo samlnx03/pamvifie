@@ -11,9 +11,10 @@ Nota: lista de isos para poner uno en el cdrom, comando relacionado bash lista-i
 Formato de info: listaIsos+
 
 */
-require_once "vmManager.php";
+require_once "vmManager/vmManager.php";
+use vmManager\vmManager as vmManager;
 
-$vmm=VMmanager::getInstance();
+$vmm=vmManager::getInstance();
 require("checa_socket_ok.php");
 $vmm->write("cmd:listaIsos");
 $l=$vmm->read(1024);

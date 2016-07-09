@@ -1,7 +1,10 @@
-<?php
+<?php namespace vmManager;
+
+use \DateTime as DateTime;
+
 require("/home/sperez/pamvifie/secret.php");
 // define IP & PORT
-class VMmanager  {
+class vmManager  {
 	protected static $instance;
 	var $address=IP;
 	var $port=PORT;
@@ -26,6 +29,11 @@ class VMmanager  {
 	    		$this->errmsg=socket_strerror(socket_last_error());
 		} 
 		$this->connect();
+		if(!$this->is_connected){
+			echo "Problema de conexion al socket<br>\n";
+			echo "</body></html>\n";
+			exit;
+		}
 	}
 	function connect(){
 		if ($this->is_connected) return;
