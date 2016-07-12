@@ -21,6 +21,7 @@ $db = new Conection();
 
 echo "<div id='Mensajes'>\n";
 $m=new virtualMachine($db, $mv);
+$m->setUser("a0701637f");	// QUITAR AL AGREGAR LAS SESIONES
 $r=$m->kill();
 echo $r."<br>\n";
 echo "</div>\n";

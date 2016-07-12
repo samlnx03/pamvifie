@@ -23,8 +23,10 @@ else {
 
 $db = new Conection(); 
 $m=new virtualMachine($db, $mv);
+$m->setUser("a0701637f");	// QUITAR AL AGREGAR LAS SESIONES
 
 echo "<div id='Mensajes'>\n";
+//echo $m->getUser();
 echo "</div>\n";
 
 echo "<div id='maquina'>\n";

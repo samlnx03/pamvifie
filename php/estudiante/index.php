@@ -18,7 +18,7 @@ echo "</div>\n";
 
 echo "<div id='reservaciones'>\n";
 // mostrar las reservaciones
-$usuario="samuelP";   // TEMPORAL
+$usuario="a0701637f";   // TEMPORAL
 $q="SELECT id, usuario, maquina, inicio, fin,  now() between inicio and fin as usable from reservaciones where usuario='$usuario'";
 //echo $q;
 $db->consulta($q);

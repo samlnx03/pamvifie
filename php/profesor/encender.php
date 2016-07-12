@@ -4,11 +4,8 @@ require_once "../db/conection.php";
 
 // AGREGAR LO DE AUTENTICACION
 
-use estudiante\virtualMachine as virtualMachine;
+use profesor\virtualMachine as virtualMachine;
 use db\Conection as Conection;
-
-//echo "nombre de mv $mv:".$db->f("name")."<br>\n";
-// lista de isos no requiere instanciar virtualMachine
 
 echo "<html><body>\n";
 require "menu.php";
@@ -25,13 +22,12 @@ $db = new Conection();
 
 echo "<div id='Mensajes'>\n";
 $m=new virtualMachine($db, $mv);
-$m->setUser("a0701637f");	// QUITAR AL AGREGAR LAS SESIONES
+$m->setUser("samuelP");	// QUITAR EN PRODUCCION
 $r=$m->boot();
 echo $r."<br>\n";
 echo "</div>\n";
 
 echo "<div id='maquina'>\n";
-echo "<a href='usable.php?mv=$mv'>Controlar</a><br>";
 echo "<a href='guacamole.html'>Utilizar</a><br>";
 echo "</div>\n";
 

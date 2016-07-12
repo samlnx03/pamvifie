@@ -31,6 +31,7 @@ $db = new Conection();
 
 echo "<div id='Mensajes'>\n";
 $m=new virtualMachine($db, $mv);
+$m->setUser("a0701637f");	// QUITAR AL AGREGAR LAS SESIONES
 $r=$m->changeCD($cd);
 echo $r."<br>\n";
 if($m->isRunning()=="SI")
