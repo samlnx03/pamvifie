@@ -18,6 +18,7 @@ echo "</div>\n";
 
 echo "<div id='asignadas'>\n";
 // mostrar las reservaciones
+/*
 $usuario="samuelP";   // TEMPORAL
 $q="SELECT mv_id from maquinas_asignadas where profesor='$usuario'";
 //echo $q;
@@ -26,7 +27,9 @@ echo "<h1>Maquinas asignadas</h1>\n";
 $mvids=array(); // ids de maquinas virtuales asignadas
 while($db->next_row())
 	$mvids[]=$db->f("mv_id");
-
+*/
+echo "<h1>Maquinas asignadas</h1>\n";
+$mvids=virtualMachine::mis_maquinas($db);
 foreach ($mvids as $maq){
 	echo "maq: $maq <a href=encender.php?mv=$maq>Encender</a><br>\n";
 	$m=new virtualMachine($db, $maq);

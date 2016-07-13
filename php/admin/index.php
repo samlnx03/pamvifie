@@ -16,16 +16,7 @@ echo "<div id='Mensajes'>\n";
 echo "</div>\n";
 
 echo "<div id='todasmaq'>\n";
-// mostrar todas las maquinas
-//$q="SELECT mv_id from maquinas_asignadas where profesor='$usuario'";
-$q="SELECT id from mvMaqVirt";
-//echo $q;
-$db->consulta($q);
-echo "<h1>Todas las maquinas</h1>\n";
-$mvids=array(); // ids de maquinas virtuales asignadas
-while($db->next_row())
-	$mvids[]=$db->f("id");
-
+$mvids=virtualMachine::mis_maquinas($db);
 foreach ($mvids as $maq){
 	echo "maq: $maq <a href=encender.php?mv=$maq>Encender</a><br>\n";
 	$m=new virtualMachine($db, $maq);

@@ -18,6 +18,22 @@ class virtualMachine {
 
  protected $user;
 
+ static function mis_reservaciones($db){// todas las maqs que tengo reservadas
+	//$user=$_SESSION['usuario'];	// este debe ser en produccion
+	$user="a0701637f";   // TEMPORAL
+	$q=" SELECT M.id as mid, M.name, R.id, R.inicio, R.fin, now() between inicio and fin as esUsable from reservaciones R left join mvMaqVirt M on R.maquina=M.id where usuario='$user'";
+	//echo $q;
+	$db->consulta($q);
+	$rids=array(); // ids de reservaciones
+	while($db->next_row())
+        	$rids[$db->f("id")]=array("name" => $db->f("name"), 
+					"inicio" =>$db->f("inicio"),
+					"fin" => $db->f("fin"),
+					"esUsable" => $db->f("esUsable"),
+					"mid" => $db->f("mid"));
+	return $rids;
+ }
+
  public function setUser($u){ 
 	$this->user=$u;
 	$this->setPermisoUsuario();
@@ -29,7 +45,7 @@ class virtualMachine {
 	// hacer el query para saber si el usuario tiene una reservacion
         $user=$this->user;
 	$q=" SELECT R.id from reservaciones R left join mvMaqVirt M on R.maquina=M.id where now() between inicio and fin and usuario='$user' and M.name='{$this->name}'";
-	echo $q;
+	//echo $q;
 	$result=$this->db->consulta($q);
 	if($result->num_rows > 0){ // estudiante si puede usar la maquina
 		//echo "usable<br>\n";

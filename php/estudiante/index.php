@@ -18,20 +18,19 @@ echo "</div>\n";
 
 echo "<div id='reservaciones'>\n";
 // mostrar las reservaciones
-$usuario="a0701637f";   // TEMPORAL
-$q="SELECT id, usuario, maquina, inicio, fin,  now() between inicio and fin as usable from reservaciones where usuario='$usuario'";
-//echo $q;
-$db->consulta($q);
+$rids=virtualMachine::mis_reservaciones($db);
 echo "<h1>Reservaciones</h1>\n";
-echo "<table border=1><tr><th>Maq.<th>desde<th>hasta<th>acciones</tr>\n";
-while($db->next_row()){
-	$maq=$db->f("maquina");
-	echo "<tr><td>$maq<td>{$db->f('inicio')}<td>{$db->f('fin')}<td>";
-	if($db->f('usable')){
-		echo "<a href='usable.php?mv=$maq'>Utilizar</a>";
+echo "<table border=1><tr><th>Maq.<th>Reservacion<th>acciones</tr>\n";
+foreach ($rids as $rid => $inforeserva){
+	echo "<tr><td>".$inforeserva["name"]; 
+	echo "<td>".$inforeserva["inicio"];
+	echo "<br>".$inforeserva["fin"];
+	if($inforeserva["esUsable"]){
+		$mid=$inforeserva["mid"];
+		echo "<td><a href='usable.php?mv=$mid'>Utilizar</a>";
 	}
 	else{
-		echo "Cancelar Reservacion";
+		echo "<td>Cancelar Reservacion";
 	}
 	echo "</tr>\n";
 }
